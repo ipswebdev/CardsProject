@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "RecruiterFlowProject"
+    }
+  },
+  "defaultProject": "RecruiterFlowProject",
+  "cli": {
+    "analytics": "0e781490-13b5-4f2a-a015-e68bf74b1c0e"
+  }
 }
