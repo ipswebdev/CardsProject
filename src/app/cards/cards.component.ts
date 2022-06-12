@@ -15,10 +15,11 @@ export class CardsComponent implements OnInit {
   constructor(private cardsService: CardServiceService) { }
 
   ngOnInit(): void {
+    console.log('cards comp')
     this.cardsService.getCards().subscribe((cards)=>{
       if(cards && cards.length){
         console.log(cards)
-        this.cards = cards.slice(0,25)
+        this.cards = cards.slice(0,20)
       }
     });
 
