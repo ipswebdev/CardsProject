@@ -4,9 +4,7 @@
     </div>
     <div class="card-grid" #grid [ngClass]="{'card-grid--animation': applyTransition}">
         <div  *ngFor="let card of cards; let i=index">
-            <div class="card">
-                <img src="{{card.url}}" alt=""><div class="card-content"> {{card.title}}</div><span (click)="removeCard(i)">X</span>
-            </div>
+            <app-card [card]="card" [index]="i" (removeCard)="removeCard(i)"></app-card>
         </div>
     </div>
 </div>
