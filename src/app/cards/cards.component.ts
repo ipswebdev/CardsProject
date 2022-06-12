@@ -18,7 +18,6 @@ export class CardsComponent implements OnInit {
     console.log('cards comp')
     this.cardsService.getCards().subscribe((cards)=>{
       if(cards && cards.length){
-        console.log(cards)
         this.cards = cards.slice(0,20)
       }
     });
