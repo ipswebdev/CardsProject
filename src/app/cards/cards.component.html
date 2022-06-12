@@ -2,9 +2,12 @@
     <div>
         <button class="btn" (click)="addCard()">Add card</button>
     </div>
-    <div class="card-grid" #grid [ngClass]="{'card-grid--animation': applyTransition}">
+    <div class="card-grid" *ngIf="cards && cards.length" #grid>
         <div  *ngFor="let card of cards; let i=index">
             <app-card [card]="card" [index]="i" (removeCard)="removeCard(i)"></app-card>
         </div>
+    </div>
+    <div class="card-grid" *ngIf="cards && !cards.length">
+        No cards Present! Getting Cards... Please be patient
     </div>
 </div>
