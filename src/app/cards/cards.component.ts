@@ -29,7 +29,9 @@ export class CardsComponent implements OnInit {
     this.cards.splice(index,1);
   }
   addCard(){
-    wrapGrid(this.grid.nativeElement);
+    if(this.cards && this.cards.length){
+      wrapGrid(this.grid.nativeElement);
+    }
     let sampleTitle = 'Sample Title';
     let imgUrl = 'https://via.placeholder.com/600/61a65'
     this.cards.push({title:sampleTitle,url:imgUrl});
