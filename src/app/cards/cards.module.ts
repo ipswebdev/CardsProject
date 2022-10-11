@@ -5,6 +5,7 @@ import { CardComponent } from './card/card.component';
 import { CardServiceService } from '../card-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
+import { CountClicks } from './button-directive.ts/btn.directive';
 
 const routes: Routes = [
   {
@@ -14,12 +15,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [CardsComponent, CardComponent],
+  declarations: [CardsComponent, CardComponent,CountClicks],
   imports: [
     CommonModule,
     HttpClientModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
   ],
-  exports: [CardsComponent, CardComponent]
+  exports: [CardsComponent, CardComponent,CountClicks]
 })
 export class CardsModule { }
