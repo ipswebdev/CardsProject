@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardsModule } from './cards/cards.module';
 import { EmptyStateComponent } from './empty-state/empty-state.component';
+import { CustomRouteReuseStrategy } from './customRouteReuse.service';
+import { RouteReuseStrategy } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,7 @@ import { EmptyStateComponent } from './empty-state/empty-state.component';
     AppRoutingModule,
     CardsModule
   ],
-  providers: [],
+  providers: [{provide: RouteReuseStrategy,useClass:CustomRouteReuseStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
