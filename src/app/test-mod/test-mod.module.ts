@@ -8,7 +8,7 @@ const routes: Routes = [
   {
     path: '',
     component: TestModComponent,
-    // data: {shouldReuse: true}
+    data: {shouldReuse: true,key: 'test-mod'}
    },
   // {
   //  path: '**',

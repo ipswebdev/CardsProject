@@ -6,19 +6,24 @@ import { TestModTwoComponent } from './test-mod-two/test-mod-two.component';
 import { TestModComponent } from './test-mod/test-mod.component';
 
 const routes: Routes = [
-  // {
-  //  path: 'cards',
-  // //  loadChildren: () => import('./cards/cards.module').then(m => m.CardsModule),
-  //  component : TestModComponent
-  // },
   {
-    path: 'test-mod/:id',
-    loadChildren: () => import('./test-mod/test-mod.module').then(m => m.TestModModule)
-    // component: TestModTwoComponent
+    path: 'test-mod',
+    loadChildren: () => import('./test-mod/test-mod.module').then(m => m.TestModModule),
+    data: {
+      parentPath: 'test-mod'
+    }
    },
    {
-    path: 'test-mod-two/:num',
-    loadChildren: () => import('./test-mod-two/test-mod-two.module').then(m => m.TestModTwoModule)
+    path: 'test-mod-two',
+    loadChildren: () => import('./test-mod-two/test-mod-two.module').then(m => m.TestModTwoModule),
+    data: {
+      parentPath: 'test-mod-two'
+    }
+   },
+   {
+    path: '',
+    pathMatch: 'full',
+    component: EmptyStateComponent
    },
   {
     path:'**',
